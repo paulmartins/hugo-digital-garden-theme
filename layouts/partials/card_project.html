@@ -1,0 +1,20 @@
+<div class='col'>
+    <div class="card top-highlight">
+        {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+        {{ if $img }}
+        {{ $img = $img.Fit "500x500" }}
+        {{ with $img }}
+        <img src="{{ .Permalink }}" alt="{{ $.Title }}" class="card-img-top p-5">
+        {{ end }}
+        {{ end }}
+        <div class="card-body">
+            {{ if .Summary }} 
+            <h4 class="card-title">{{ .Title }}</h4>
+            <p class="card-text pb-3">{{ .Summary }}.</p>
+            {{ else }}
+            <h4 class="card-title pb-3">{{ .Title }}</h4>
+            {{ end }}
+            <a href="{{ .Permalink }}" class="stretched-link"></a>
+        </div>
+    </div>
+</div>

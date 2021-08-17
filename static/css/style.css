@@ -1,0 +1,302 @@
+:root {
+    --blue: #0A94C8;
+    --lighter-blue: #addbec;
+    --yellow: #FFB603;
+    --red: #FF2F03;
+    --dark: #233044;
+    --grey: #454963;
+    --white: #fff;
+    --mulish: 'Mulish', sans-serif;
+    --summary: 'Frank Ruhl Libre', serif;
+    --headings: 'Encode Sans Semi Condensed', sans-serif;
+
+    /* --mulish: 'Raleway', sans-serif;  */
+    /* --summary: 'Playfair Display', serif; */
+    /* --summary: 'Spectral', serif; */
+
+}
+
+
+/********************* General *********************/
+
+body {
+  font-family: var(--mulish);
+  font-weight: 300;
+  color: var(--dark);
+}
+
+#content {
+  position: relative;
+  min-height: 90vh;
+}
+
+a {
+  text-decoration: underline var(--grey);
+  color: var(--dark);
+}
+
+.serif {
+  font-family: var(--summary);
+  color: var(--grey);
+}
+
+.card{
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+  transition: 1s transform cubic-bezier(.155,1.105,.295,1.12),1s box-shadow,1s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+/* padding: 14px 80px 18px 36px; */
+  cursor: pointer;
+}
+.card-title {
+  font-weight: 600;
+}
+.card-footer {
+  background-color: var(--white);
+}
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+.top-highlight:hover { 
+  border-top-color: var(--blue);
+  border-top-width: 2px;
+}
+.card h3{
+  font-weight: 600;
+}
+.card-right {
+  text-align: right;
+}
+.card-date {
+  font-weight: lighter;
+  color: var(--grey);
+  font-size: x-small;
+}
+
+@media(max-width: 990px){
+  .card{
+    margin: 20px;
+  }
+} 
+
+blockquote {
+  font-family: var(--mulish);
+  padding: 10px 10px 1px 30px;
+  background-color:ghostwhite;
+  border-left-width: 5px;
+  border-left-color: lightgray;
+  border-left-style: solid;
+  font-style: italic;
+}
+code {
+  color: var(--grey);
+  font-size: smaller;
+}
+.btn-link {
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-radius: 0px;
+  color: var(--blue);
+  vertical-align: middle;
+}
+.btn-link i {
+  padding-right: 5px;
+}
+.btn-link:hover {
+  text-decoration: underline;
+  transition: 0.6s;
+  transform: translate(0, 5px);
+  color: var(--blue);
+}
+.status {
+  font-weight: lighter;
+  color: green;
+  font-size: small;
+}
+
+
+/********************* Navbar *********************/
+
+.navbar {
+  background: var(--light) !important;
+  color: var(--dark);
+}
+.navbar-nav .nav-item .nav-link {
+    color: var(--grey);
+    font-family: var(--mulish);
+    font-weight: 300;
+    transition: color 1s;
+    display: block;
+    position: relative;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 0.2em 0;
+}
+/* Fade in */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: var(--red);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+.nav-link:hover::after,
+.nav-link:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+
+
+/********************* Home *********************/
+
+.name {
+    font-weight: 800;
+}
+.bio {
+  max-width: 750px;
+}
+.heading {
+    font-weight: 400;
+    color: var(--grey);
+    font-family: var(--headings);
+    text-decoration: none;
+}
+.heading:hover {
+  transition: 0.6s;
+  color: var(--blue);
+  cursor: pointer;
+}
+.subheading {
+  font-family: var(--summary);
+  color: var(--grey);
+  font-size: 22px;
+  padding-bottom: 10px;
+}
+.tag-badge {
+  background-color: var(--blue);
+  font-family: var(--mulish);
+  font-weight: 400;
+}
+.see-all {
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-radius: 0px;
+  color: var(--blue);
+  border-bottom-color:gainsboro;
+}
+.see-all:hover {
+  transition: 0.6s;
+  transform: translate(0, 5px);
+  border-bottom-color: var(--blue);
+  color: var(--blue);
+}
+
+
+/********************* List *********************/
+
+/* ---- button-filters ---- */
+.button {
+  font-weight: 200;
+  display: inline-block;
+  padding: 0.15em 0.5em;
+  background: var(--white);
+  border: 2px;
+  margin-bottom: 10px;
+  margin-right: 3px;
+  color:var(--grey);
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: small;
+}
+.button:hover {
+  background-color:var(--lighter-blue);
+  color:var(--dark);
+  transition: 1s;
+}
+.button:active,
+.button.is-checked {
+  background-color: var(--lighter-blue);
+  color:var(--dark);
+}
+.btn-check:active+.button, 
+.btn-check:checked+.button, 
+.button.active, 
+.button.dropdown-toggle.show, 
+.button:active {
+  color: #fff;
+  background-color: var(--lighter-blue);
+  color: var(--dark);
+}
+.button-group:after {
+  content: '';
+  display: block;
+  /* clear: both; */
+}
+.button-group .button {
+  float: left;
+  border-radius: 5px;
+}
+
+/* ---- Title ---- */
+.display-2 {
+  font-family: var(--mulish);
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/********************* Content *********************/
+
+.main-content {
+  line-height: 40px;
+  font-size: 22px;
+}
+.main-content::first-letter {
+  font-size: 375%;
+  padding: 20px 15px 0px 0px;
+  float: left;
+  font-weight: bold;
+}
+a {
+  color: var(--blue);
+  text-decoration: underline 0.10em rgba(255, 255, 255, 0);
+  transition: text-decoration-color 0.5s;
+}
+a:hover {
+  color: var(--blue);
+  text-decoration-color: var(--blue);
+}
+.main-content h2, h3 {
+  font-family: var(--headings);
+  font-weight: bold;
+  color: var(--dark);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.highlight {
+  line-height: normal;
+  font-size: medium;
+  border-left-style: solid;
+  border-left-width: 5px;
+  padding-left: 10px;
+  border-color:lightgrey;
+}
+
+/********************* Footer *********************/
+
+.footer-social a,
+.footer-social i{
+  color: var(--dark);
+  font-size: x-large;
+}
+
+.footer-social a,
+.footer-social i:hover{
+  color: var(--blue);
+  transition: color .5s;
+}

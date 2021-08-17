@@ -1,0 +1,53 @@
+{{ define "main" }}
+
+<!-- Title and summary -->
+<div class="container">
+    <div class="py-5 rounded-3">
+        <div class="container-fluid py-2">
+            <h1 class="display-2 mb-4">{{ .Title }}</h1>
+            <p class="bio col-md-8 fs-4 serif">{{ .Summary }}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Filter Buttons -->
+<div class="container mb-5">
+
+    <!-- Multiple checkboxes option -->
+    <div class="btn-toolbar mb-2 bio" role="toolbar" aria-label="Toolbar with button groups">
+        <i class="fas fa-filter"></i>
+        <div id="filters" class="button-group">
+            {{ range $name, $taxonomy := .Site.Taxonomies.blog_tags }}
+            {{ $btnid := $name | printf ".js-iso-%s"}}
+            <input type="checkbox" class="btn-check" id="{{ $btnid }}" autocomplete="off" data-filter="{{ $btnid }}">
+            <label class="button" for="{{ $btnid }}">{{ $name }}</label>  
+            {{ end }}
+        </div>
+    </div>
+
+    <!-- Single checkbox option -->
+    <!-- Please switch comment in isotope.js for this to work -->
+
+    <!-- <div class="btn-toolbar mb-2 bio" role="toolbar" aria-label="Toolbar with button groups">
+        <div id="filters" class="button-group">
+            <button class="button is-checked" data-filter="*">All</button>
+            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+            {{ $btnid := $name | printf ".js-iso-%s"}}
+            <button class="button" data-filter="{{ $btnid }}">{{ $name }}</button>
+            {{ end }}
+        </div>
+    </div> 
+    -->
+
+</div>
+
+<!-- Blog Post Cards -->
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" id="blogposts">
+        {{ range .Pages.ByPublishDate.Reverse }}
+        {{ partial "card_blog.html" . }}
+        {{ end }}
+     </div>
+</div>
+
+{{ end }}

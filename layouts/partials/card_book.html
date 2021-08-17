@@ -1,0 +1,42 @@
+{{ if .Params.Imgonly }}
+<div class='col-sm-6 col-md-6 col-lg-3 col-xl-2 mb-3'>
+    <div class="card">
+        <a href="{{ .Permalink }}" class="stretched-link"></a>
+        {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+        {{ $img = $img.Fit "350x500" }}
+        {{ with $img }}
+            <img src="{{ .Permalink }}" alt="{{ $.Title }}" class="card-img">
+        {{ end }}
+    </div>
+</div>
+{{ else }}
+<div class='col-sm-6 col-lg-6 col-xl-4 mb-3'>
+    <div class="card top-highlight">
+        <a href="{{ .Permalink }}" class="stretched-link"></a>
+        <div class="row g-0">
+            <div class="col-md-12 col-lg-4 col-xl-5">
+                {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+                {{ $img = $img.Fit "400x500" }}
+                {{ with $img }}
+                    <img src="{{ .Permalink }}" class="img-fluid rounded-start card-img-top" alt="...">
+                {{ end }}
+            </div>
+            <div class="col-lg-8 col-xl-7 ms-auto">
+                <div class="card-body">
+                    {{ if .Summary | safeHTML | truncate 100}} 
+                    <h4 class="card-title">{{ .Title }}</h4>
+                    <p class="card-text pb-3">{{ .Summary }}</p>
+                    {{ else }}
+                    <h4 class="card-title pb-3">{{ .Title }}</h4>
+                    {{ end }}
+                    <p class="card-text">
+                        <figcaption class="blockquote-footer">
+                          {{ .Params.Author }}
+                        </figcaption>
+                      </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

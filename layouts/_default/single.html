@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+<div class="container" style="max-width: 800px;">
+    <div class="py-4 rounded-3">
+        <div class="container-fluid py-2">
+            <h1 class="display-2 mb-4 text-center">{{ .Title }}</h1>
+        </div>
+        {{ with .Summary }}
+        <p class="text-center fs-4 fst-italic serif">{{ . }}</p>
+        {{ end }}
+        <div class="text-center pt-4">
+            {{ with .Params.links }}
+            {{ range sort . "weight" }}
+            <a href="{{ .href }}" role="button" class="btn btn-sm btn-link mx-2" target="_blank">
+                <i class="{{ .icon }} fs-5"></i>
+            {{ .text }}
+            </a>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+    <div class="row justify-content-center mb-5">
+        <div class="col-12">
+            <p class="card-date m-0" style="text-align: right">{{ .PublishDate.Format "Jan 2, 2006" }}</p>
+            <hr class="dropdown-divider">
+            <div class="row justify-content-between">
+                <div class="col-sm-8">
+                {{ with .Params.tags }}
+                    {{ range . }}
+                    <span class="badge tag-badge">{{ . }}</span>
+                    {{ end }}
+                {{ end }}
+                {{ with .Params.blog_tags }}
+                    {{ range . }}
+                    <span class="badge tag-badge">{{ . }}</span>
+                    {{ end }}
+                {{ end }}
+                {{ with .Params.project_tags }}
+                    {{ range . }}
+                    <span class="badge tag-badge">{{ . }}</span>
+                    {{ end }}
+                {{ end }}
+                </div>
+                <div class="col-sm-4" style="text-align: right;">
+                    {{ partial "status.html" . }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-2">
+        <div class="serif main-content">
+            {{ .Content | safeHTML }}
+        </div>
+    </div>
+</div>
+
+{{ end }}

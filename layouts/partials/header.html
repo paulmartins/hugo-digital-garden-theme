@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="{{ .Site.BaseURL }}">
+            {{ if .Site.Params.Initials }}
+            <b style="font-weight: 800;">{{ .Site.Params.Initials }}</b>
+            {{ else }}
+            <b style="font-weight: 800;">{{ .Site.Params.Name }}</b>
+            {{ end }}
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+            {{- $currentPage := . -}}
+            {{ range .Site.Menus.main -}}
+                <li class='nav-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}'>
+                    <a class="nav-link" href="{{ .URL }}"> {{ .Name }}</a>
+                </li>
+            {{ end }} 
+            <li class="nav-item px-2 pt-1">
+                <a class="btn fas fa-moon" id="dark-mode-toggle"></a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>

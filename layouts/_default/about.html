@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-md-6">
+            <div class="py-5 my-5 rounded-3">
+                <div class="container-fluid py-2">
+                    <h1 class="display-2 mb-4">{{ .Title }}</h1>
+                    <p class="fs-1 serif">{{ .Summary }}</p>
+                </div>
+                <div class="container-fluid py-2">
+                    <div class="fs-4 serif">{{ .Content }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="py-5 my-5 rounded-3">
+                <div class="container-fluid py-2">
+                    {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+                    {{ $img = $img.Fit "500x600" }}
+                    {{ with $img }}
+                    <img src="{{ .Permalink }}" alt="{{ $.Title }}">
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

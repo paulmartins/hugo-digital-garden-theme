@@ -1,0 +1,26 @@
+{{ .Scratch.Set "blog_tags_list" ""}}
+{{ range .Params.blog_tags }}
+    {{ $.Scratch.Add "blog_tags_list" ( . | printf " js-iso-%s") }}
+{{ end }}
+<div class='col {{ $.Scratch.Get "blog_tags_list" }}'>
+    <div class="card top-highlight">
+        <div class="card-body">
+            {{ if .Summary }} 
+            <h4 class="card-title">{{ .Title }}</h4>
+            <p class="card-text pb-3">{{ .Summary }}.</p>
+            {{ else }}
+            <h4 class="card-title pb-3">{{ .Title }}</h4>
+            {{ end }}
+            {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+            {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+            <hr class="dropdown-divider">
+            <div class="row justify-content-between">
+                <div class="col-8 text-muted"><span style="font-size: small;"> {{ .PublishDate.Format "Jan 2, 2006" }}</span></div>
+                <div class="col-4" style="text-align: right;">{{ partial "status.html" . }} </div>
+            </div>
+
+            <a href="{{ .Permalink }}" class="stretched-link"></a>
+        </div>
+    </div>
+</div>
+{{ .Scratch.Delete "blog_tags_list" }}

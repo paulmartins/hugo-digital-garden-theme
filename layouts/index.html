@@ -1,0 +1,98 @@
+{{ define "main" }}
+
+<div class="mt-5 pt-5 pb-1">
+    <div class="container" >
+        <h1 class="name display-1"><b>{{ .Site.Params.Name }}</b></h1>
+    </div>
+</div>
+<div class="mb-5 py-4">
+    <div class="container">
+        <h2 class="bio lh-base fs-1 serif">{{ .Site.Params.Description }}</h2>
+    </div>
+</div>
+
+<div class="container py-3">
+	<div class="row justify-content-between my-5">
+		<!-- Blog -->
+		<div class="col-lg-4">
+			{{ with .Site.GetPage "section" "posts" }}
+          	<div class="pb-4">
+              	<a class="heading fs-2" href="{{ .URL }}">{{ .Title }}</a>
+          	</div>      
+			{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
+			{{ end }}
+			<div class="row row-cols-1 g-4 mb-5">
+				{{ range ( where site.RegularPages "Section" "posts" | first 6 ) }}
+				{{ partial "home_card.html" . }}
+				{{ end }}
+      		</div>
+			{{ with .Site.GetPage "section" "posts" }}
+			<div class="d-flex flex-row-reverse">
+        		<a href="{{ .URL }}" role="button" class="btn btn-sm see-all">See all posts</a>
+      		</div>
+      		{{ end }}
+		</div>
+    	
+		<!-- Projects -->
+		<div class="col-lg-7">
+			{{ with .Site.GetPage "section" "projects" }}
+			<div class="pb-4">
+				<a class="heading fs-2" href="{{ .URL }}">{{ .Title }}</a>
+			</div>          
+			{{ if .Summary }} 
+			<p class="subheading">{{ .Summary }}</p> 
+			{{ end }}
+			{{ end }}
+			<div class="row row-cols-1 row-cols-md-2 g-4 mb-5" data-masonry='{"percentPosition": true }'>
+				{{ range ( where site.RegularPages "Section" "projects" | first 6 ) }}
+				{{ partial "home_project.html" . }}
+				{{end}}
+    		</div>
+			{{ with .Site.GetPage "section" "projects" }}
+			<div class="d-flex flex-row-reverse">
+				<a href="{{ .URL }}" role="button" class="btn btn-sm see-all">See all projects</a>
+			</div>    
+			{{ end }}
+  		</div>
+	</div>
+
+	<!-- Library -->
+	<div class="container py-3">
+		<div class="row justify-content-between my-5">
+			<div class="col-sm-4 col-lg-3">
+				{{ with .Site.GetPage "section" "books" }}
+				<div class="pb-4">
+					<a class="heading fs-2" href="{{ .URL }}">{{ .Title }}</a>
+				</div>
+				{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
+				<div class="d-flex">
+					<a href="{{ .URL }}" role="button" class="btn btn-sm see-all">See all books</a>
+				</div>
+				{{ end }}
+			</div>
+			<div class="col me-auto">
+				<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+					{{ range ( where site.RegularPages "Section" "books" | first 3 ) }}
+					<div class="col">
+						<div class="card">
+							{{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+							{{ $img = $img.Fit "350x500" }}
+							{{ with $img }}
+							<img src="{{ .Permalink }}" alt="{{ $.Title }}" class="card-img-top">
+							{{ end }}
+							<div class="card-body">
+								<h5 class="card-title">{{ .Title }}</h5>
+								<p class="card-text">
+									<figcaption class="blockquote-footer">{{ .Params.Author}}</figcaption>
+								</p>
+								<a href="{{ .Permalink }}" class="stretched-link"></a>
+							</div>
+						</div>  
+					</div>
+					{{end}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{ end }}

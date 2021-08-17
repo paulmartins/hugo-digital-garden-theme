@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+<div class="container">
+    <div class="py-5 rounded-3">
+        <div class="container-fluid py-2">
+            <h1 class="display-2 mb-4">{{ .Title }}</h1>
+            <p class="bio col-md-8 fs-4 serif">{{ .Summary }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    {{ range .Pages.ByPublishDate.Reverse }}
+    <p>
+        <h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ partial "metadata.html" . }}
+        <a class="summary" href="{{ .RelPermalink }}">
+            <p>{{ .Summary }}</p>
+        </a>
+    </p>
+    {{ end }}
+</div>
+
+{{ end }}

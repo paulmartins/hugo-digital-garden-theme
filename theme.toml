@@ -1,0 +1,21 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Digital Garden"
+license = "MIT"
+licenselink = "https://github.com/paulmartins/hugo-digital-garden-theme/blob/master/LICENSE"
+description = "Theme inspire by Maggie Appleton's digital garden."
+homepage = "https://github.com/paulmartins/hugo-digital-garden-theme/"
+tags = ["clean", "customizable", "personal", "dark", "light", "digital garden"]
+features = ["blog", "highlighting", "responsive"]
+min_version = "0.81.0"
+
+[author]
+  name = "Paul Martins"
+  homepage = "www.paul-martins.com"
+  twitter = "https://twitter.com/Paul_Martins1"
+
+# If porting an existing theme
+[original]
+  name = "Maggie Appleton"
+  homepage = "https://maggieappleton.com/"

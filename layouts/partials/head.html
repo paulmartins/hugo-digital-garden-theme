@@ -1,0 +1,16 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Enable Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&family=Spectral:wght@200&family=Noto+Serif+KR:wght@300&family=Neuton:wght@300&family=Frank+Ruhl+Libre:wght@300&family=Encode+Sans+Semi+Condensed:wght@400&display=swap" rel="stylesheet">
+    <!-- CSS Styles (including Bootstrap 5 and FontAwesome 6) -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/all.min.css">
+    <link disabled id="dark-mode-theme" rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    {{ $title := print .Site.Title " | " .Title }}
+    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    <title>{{ $title }}</title>
+</head>
