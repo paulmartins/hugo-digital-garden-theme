@@ -35,6 +35,30 @@ a {
   color: var(--dark);
 }
 
+strong {
+  font-weight:600;
+}
+
+table {
+  font-family: var(--mulish);
+}
+thead {
+  background-color:whitesmoke;
+  border-bottom-color: var(--dark);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+table th , table td{
+  padding-right: 40px;
+  padding-left: 10px;
+}
+table th{
+  font-size:large;
+}
+table td{
+  font-size: medium;
+}
+
 .serif {
   font-family: var(--summary);
   color: var(--grey);
@@ -50,6 +74,7 @@ a {
 }
 .card-title {
   font-weight: 600;
+  font-family: var(--mulish);
 }
 .card-footer {
   background-color: var(--white);
@@ -81,13 +106,12 @@ a {
 } 
 
 blockquote {
-  font-family: var(--mulish);
+  font-family: var(--summary);
   padding: 10px 10px 1px 30px;
   background-color:ghostwhite;
   border-left-width: 5px;
   border-left-color: lightgray;
   border-left-style: solid;
-  font-style: italic;
 }
 code {
   color: var(--grey);
@@ -160,6 +184,7 @@ code {
 }
 .bio {
   max-width: 750px;
+  font-weight: 200;
 }
 .heading {
     font-weight: 400;
@@ -271,7 +296,7 @@ a:hover {
   color: var(--blue);
   text-decoration-color: var(--blue);
 }
-.main-content h2, h3 {
+.main-content h2, h3, h4 {
   font-family: var(--headings);
   font-weight: bold;
   color: var(--dark);
@@ -284,7 +309,7 @@ a:hover {
   border-left-style: solid;
   border-left-width: 5px;
   padding-left: 10px;
-  border-color:lightgrey;
+  border-color: var(--dark);
 }
 
 /********************* Footer *********************/

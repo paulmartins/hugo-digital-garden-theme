@@ -30,7 +30,7 @@
 
     <div class="container py-2">
         <div class="serif main-content p-5">
-            {{ .Content | safeHTML }}
+            {{ .Content | markdownify | safeHTML }}
         </div>
     </div>
 

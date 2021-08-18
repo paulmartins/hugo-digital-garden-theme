@@ -1,8 +1,8 @@
-{{ .Scratch.Set "blog_tags_list" ""}}
-{{ range .Params.blog_tags }}
-    {{ $.Scratch.Add "blog_tags_list" ( . | printf " js-iso-%s") }}
+{{ .Scratch.Set "garden_tags_list" ""}}
+{{ range .Params.garden_tags }}
+    {{ $.Scratch.Add "garden_tags_list" ( . | printf " js-iso-%s") }}
 {{ end }}
-<div class='col {{ $.Scratch.Get "blog_tags_list" }}'>
+<div class='col {{ $.Scratch.Get "garden_tags_list" }}'>
     <div class="card top-highlight">
         <div class="card-body">
             {{ if .Summary }} 
@@ -23,4 +23,4 @@
         </div>
     </div>
 </div>
-{{ .Scratch.Delete "blog_tags_list" }}
+{{ .Scratch.Delete "garden_tags_list" }}

@@ -13,22 +13,22 @@
 
 <div class="container py-3">
 	<div class="row justify-content-between my-5">
-		<!-- Blog -->
+		<!-- Garden / Blog -->
 		<div class="col-lg-4">
-			{{ with .Site.GetPage "section" "posts" }}
+			{{ with .Site.GetPage "section" "garden" }}
           	<div class="pb-4">
               	<a class="heading fs-2" href="{{ .URL }}">{{ .Title }}</a>
           	</div>      
 			{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
 			{{ end }}
 			<div class="row row-cols-1 g-4 mb-5">
-				{{ range ( where site.RegularPages "Section" "posts" | first 6 ) }}
-				{{ partial "home_card.html" . }}
+				{{ range ( where site.RegularPages "Section" "garden" | first 6 ) }}
+				{{ partial "home_garden.html" . }}
 				{{ end }}
       		</div>
-			{{ with .Site.GetPage "section" "posts" }}
+			{{ with .Site.GetPage "section" "garden" }}
 			<div class="d-flex flex-row-reverse">
-        		<a href="{{ .URL }}" role="button" class="btn btn-sm see-all">See all posts</a>
+        		<a href="{{ .URL }}" role="button" class="btn btn-sm see-all">See all articles</a>
       		</div>
       		{{ end }}
 		</div>
@@ -60,7 +60,7 @@
 	<div class="container py-3">
 		<div class="row justify-content-between my-5">
 			<div class="col-sm-4 col-lg-3">
-				{{ with .Site.GetPage "section" "books" }}
+				{{ with .Site.GetPage "section" "library" }}
 				<div class="pb-4">
 					<a class="heading fs-2" href="{{ .URL }}">{{ .Title }}</a>
 				</div>
@@ -72,7 +72,7 @@
 			</div>
 			<div class="col me-auto">
 				<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
-					{{ range ( where site.RegularPages "Section" "books" | first 3 ) }}
+					{{ range ( where site.RegularPages "Section" "library" | first 3 ) }}
 					<div class="col">
 						<div class="card">
 							{{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}

@@ -1,0 +1,77 @@
+baseURL = "https://www.example.com"
+languageCode = "en-us"
+title = "My Digital Garden"
+theme = "digital-garden"
+themesdir = "../.."
+copyright = "Nigalya Ponya ©"
+
+
+[params]
+  name = "Nigalya Ponya"
+  description = "Red panda living in the eastern Himalayas."
+  initials = "NP"
+
+  [[params.social]]
+    name = "Twitter"
+    link = "#"
+    icon = "fab fa-twitter"
+
+  [[params.social]]
+    name = "Github"
+    link = "#"
+    icon = "fab fa-github"
+
+  [[params.social]]
+    name = "Medium" 
+    link = "#"
+    icon = "fab fa-medium-m"
+
+  [[params.social]]
+    name = "LinkedIn"
+    link = "#"
+    icon = "fab fa-linkedin-in"
+
+
+[menu]
+  [[menu.main]]
+    name = "Digital Garden"
+    pre = ""
+    url = "/garden/"
+    weight = 1
+  [[menu.main]]
+    name = "Projects"
+    pre = ""
+    url = "/projects/"
+    weight = 2
+  [[menu.main]]
+    name = "Library"
+    pre = ""
+    url = "/library/"
+    weight = 3
+  [[menu.main]]
+    name = "About"
+    pre = ""
+    url = "/about/"
+    weight = 4
+
+
+[taxonomies]
+  garden_tags = 'garden_tags'
+  project_tags = 'project_tags'
+
+
+[markup]
+  defaultMarkdownHandler = 'goldmark'
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.goldmark.extensions]
+    definitionList = true
+    footnote = true
+    linkify = true
+    strikethrough = true
+    table = true
+    taskList = true
+    typographer = true
+  [markup.highlight]
+    # Choose from https://xyproto.github.io/splash/docs/all.html
+    style = 'monokailight'

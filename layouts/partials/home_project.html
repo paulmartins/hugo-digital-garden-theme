@@ -12,16 +12,16 @@
             <p class="card-text">{{ .Summary }}</p>
             <a href="{{ .Permalink }}" class="stretched-link"></a>
             <div class="row justify-content-between">
-                <div class="col-8">
+                <div class="col align-self-start">
                 {{ with .Params.project_tags }}
                 {{ range . }}
                 <span class="badge tag-badge">{{ . }}</span>
                 {{ end }}
                 {{ end }}
-            </div>
-            <div class="col-4" style="text-align: right">
-                {{ partial "status.html" . }}
-            </div>
+                </div>
+                <div class="col align-self-end" style="text-align: right">
+                    {{ partial "status.html" . }}
+                </div>
             </div>
         </div>
     </div>  
