@@ -1,6 +1,7 @@
 ---
 title: "On the nutrition benefits of bamboo shoots"
-date: 2021-08-12
+date: 2019-01-01
+lastmod: 2021-08-12
 draft: false
 garden_tags: ["bamboo", "food"]
 summary: " "

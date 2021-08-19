@@ -21,11 +21,20 @@
     </div>
     <div class="row justify-content-center mb-5">
         <div class="col-12">
-            <p class="card-date m-0" style="text-align: right">{{ .PublishDate.Format "Jan 2, 2006" }}</p>
+            <p class="card-date m-0">
+                {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+                {{ with .Date }}
+                    Created {{ .Format $dateFormat }} - 
+                {{ end }}
+                Last updated: {{ .Lastmod.Format $dateFormat }}
+            </p>
             <hr class="dropdown-divider">
             <div class="row justify-content-between">
-                <div class="col-sm-8">
-                {{ with .Params.tags }}
+                <div class="col-sm-4">
+                    {{ partial "status.html" . }}
+                </div>
+                <div class="col-sm-8" style="text-align: right;">
+                    {{ with .Params.tags }}
                     {{ range . }}
                     <span class="badge tag-badge">{{ . }}</span>
                     {{ end }}
@@ -40,9 +49,6 @@
                     <span class="badge tag-badge">{{ . }}</span>
                     {{ end }}
                 {{ end }}
-                </div>
-                <div class="col-sm-4" style="text-align: right;">
-                    {{ partial "status.html" . }}
                 </div>
             </div>
         </div>
