@@ -9,5 +9,5 @@ This theme allows you to:
 
 You can take a look at the exampleSite for how to create content.
 
-![Home](https://github.com/paulmartins/hugo-digital-garden-theme/tree/main/images/screenshot_home.png)
+![Home](https://github.com/paulmartins/hugo-digital-garden-theme/blob/main/images/screenshot_home.png)
 
