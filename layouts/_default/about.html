@@ -15,10 +15,12 @@
         <div class="col-md-5">
             <div class="py-5 my-5 rounded-3">
                 <div class="container-fluid py-2">
+                    {{ if (.Resources.ByType "image").GetMatch "*featured*" }}
                     {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
                     {{ $img = $img.Fit "500x600" }}
                     {{ with $img }}
                     <img src="{{ .Permalink }}" alt="{{ $.Title }}">
+                    {{ end }}
                     {{ end }}
                 </div>
             </div>
