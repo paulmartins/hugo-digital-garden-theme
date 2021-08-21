@@ -10,6 +10,7 @@ copyright = "Nigalya Ponya ©"
   name = "Nigalya Ponya"
   description = "Red panda living in the eastern Himalayas."
   initials = "NP"
+  googleAnalytics = ""
 
   [[params.social]]
     name = "Twitter"
@@ -35,22 +36,18 @@ copyright = "Nigalya Ponya ©"
 [menu]
   [[menu.main]]
     name = "Digital Garden"
-    pre = ""
     url = "/garden/"
     weight = 1
   [[menu.main]]
     name = "Projects"
-    pre = ""
     url = "/projects/"
     weight = 2
   [[menu.main]]
     name = "Library"
-    pre = ""
     url = "/library/"
     weight = 3
   [[menu.main]]
     name = "About"
-    pre = ""
     url = "/about/"
     weight = 4
 
