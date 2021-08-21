@@ -8,12 +8,12 @@
 
 A simple Hugo theme for your digital garden, inspired by Maggie Appleton [website](https://maggieappleton.com/)
 
-Featured included with the theme:
-* digital garden / blog
-* projects portfolio
+This theme includes:
+* a digital garden / blog
+* a projects portfolio
 * library notes
 
-![Home](https://github.com/paulmartins/hugo-digital-garden-theme/blob/main/images/screenshot_home.png)
+![Home](https://github.com/paulmartins/hugo-digital-garden-theme/blob/main/images/screenshot.png)
 
 ## Getting started
 
