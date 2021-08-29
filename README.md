@@ -38,13 +38,20 @@ You can either use git submodule or clone the repo in your theme folder
     ```
 
 
-## Parameters
+## Update to the latest version of the theme
 
+If you used git submodule to add the theme (see Getting started) do
+
+```bash
+git submodule update --remote --rebase
 ```
-[params]
-  name = "Nigalya Ponya"
-  description = "Red panda living in the eastern Himalayas."
-  initials = "NP"
+
+If you clone the theme, just go in the theme folder and `pull`
+
+```bash
+cd themes/digital-garden
+git pull
 ```
+
 
 [![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fpaulmartins%2Fhugo-digital-garden-theme)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fpaulmartins%2Fhugo-digital-garden-theme)
