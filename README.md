@@ -8,12 +8,15 @@
 
 A simple Hugo theme for your digital garden, inspired by Maggie Appleton [website](https://maggieappleton.com/)
 
+[**DEMO**](https://hugo-digital-garden-demo.netlify.app/)
+
 This theme includes:
 * a digital garden / blog
 * a projects portfolio
 * library notes
 
 ![Home](https://github.com/paulmartins/hugo-digital-garden-theme/blob/main/images/screenshot.png)
+
 
 ## Getting started
 

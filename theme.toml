@@ -9,6 +9,7 @@ homepage = "https://github.com/paulmartins/hugo-digital-garden-theme/"
 tags = ["clean", "customizable", "personal", "dark", "light", "digital garden"]
 features = ["blog", "highlighting", "responsive"]
 min_version = "0.81.0"
+demosite = "https://hugo-digital-garden-demo.netlify.app/"
 
 [author]
   name = "Paul Martins"
