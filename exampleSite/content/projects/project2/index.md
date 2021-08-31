@@ -61,5 +61,22 @@ Any image in this folder with the word `feature` in its name will be used as the
 Any `index.md` file in this folder with the front matter above will be used to create the project page.  
 In addition to the post frontmatter, the project one get a `links` key if you want to have links to external source (github, ...).
 
+
+### Shortcodes
+
+Split text into columns with the `row` and `column` shortcodes.
+
+{{< row >}}
+{{< column >}}
+#### Col 1 Title
+column 1 text
+{{< /column >}}
+{{< column >}}
+#### Col 2 Title
+column 2 text
+{{< /column >}}
+{{< /row >}}
+
+
 ---
 <small>Red panda icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></small>
