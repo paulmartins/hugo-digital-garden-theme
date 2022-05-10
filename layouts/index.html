@@ -17,7 +17,7 @@
 		<div class="col-lg-4">
 			{{ with .Site.GetPage "section" "garden" }}
           	<div class="pb-4">
-              	<a class="heading fs-2" href="{{ .URL }}">{{ .Title }}</a>
+              	<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
           	</div>      
 			{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
 			{{ end }}
@@ -28,7 +28,7 @@
       		</div>
 			{{ with .Site.GetPage "section" "garden" }}
 			<div class="d-flex flex-row-reverse">
-        		<a href="{{ .URL }}" role="button" class="btn btn-sm see-all">See all articles</a>
+        		<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all articles</a>
       		</div>
       		{{ end }}
 		</div>
@@ -37,7 +37,7 @@
 		<div class="col-lg-7">
 			{{ with .Site.GetPage "section" "projects" }}
 			<div class="pb-4">
-				<a class="heading fs-2" href="{{ .URL }}">{{ .Title }}</a>
+				<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
 			</div>          
 			{{ if .Summary }} 
 			<p class="subheading">{{ .Summary }}</p> 
@@ -50,7 +50,7 @@
     		</div>
 			{{ with .Site.GetPage "section" "projects" }}
 			<div class="d-flex flex-row-reverse">
-				<a href="{{ .URL }}" role="button" class="btn btn-sm see-all">See all projects</a>
+				<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all projects</a>
 			</div>    
 			{{ end }}
   		</div>
@@ -62,11 +62,11 @@
 			<div class="col-sm-4 col-lg-3">
 				{{ with .Site.GetPage "section" "library" }}
 				<div class="pb-4">
-					<a class="heading fs-2" href="{{ .URL }}">{{ .Title }}</a>
+					<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
 				</div>
 				{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
 				<div class="d-flex">
-					<a href="{{ .URL }}" role="button" class="btn btn-sm see-all">See all books</a>
+					<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all books</a>
 				</div>
 				{{ end }}
 			</div>
