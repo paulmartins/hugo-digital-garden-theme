@@ -1,8 +1,8 @@
 baseURL = "https://www.example.com"
 languageCode = "en-us"
 title = "My Digital Garden"
-theme = "hugo-digital-garden-theme"
-themesdir = "../../"
+theme = "digital-garden"
+themesdir = "./themes"
 copyright = "Nigalya Ponya ©"
 
 
