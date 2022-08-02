@@ -1,5 +1,9 @@
+{{ .Scratch.Set "library_tags_list" ""}}
+{{ range .Params.library_tags }}
+    {{ $.Scratch.Add "library_tags_list" ( . | printf " js-iso-%s") }}
+{{ end }}
 {{ if .Params.Imgonly }}
-<div class='col-sm-6 col-md-6 col-lg-3 col-xl-2 mb-3'>
+<div class='col col-sm-6 col-md-6 col-lg-3 col-xl-2 mb-3 {{ $.Scratch.Get "library_tags_list" }}'>
     <div class="card">
         <a href="{{ .Permalink }}" class="stretched-link"></a>
         {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
@@ -10,7 +14,7 @@
     </div>
 </div>
 {{ else }}
-<div class='col-sm-6 col-lg-6 col-xl-4 mb-3'>
+<div class='col col-sm-6 col-lg-6 col-xl-4 mb-3 {{ $.Scratch.Get "library_tags_list" }}'>
     <div class="card top-highlight">
         <a href="{{ .Permalink }}" class="stretched-link"></a>
         <div class="row g-0">
@@ -40,3 +44,4 @@
     </div>
 </div>
 {{ end }}
+{{ .Scratch.Delete "library_tags_list" }}
