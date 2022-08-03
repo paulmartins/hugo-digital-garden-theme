@@ -4,7 +4,7 @@ author: "Janell Rosener"
 date: 2021-01-01
 draft: false
 summary: " "
-tags: ["red panda", "kids"]
+library_tags: ["red-panda", "kids"]
 imgonly: true
 ---
 One of the kids favorite ! Follow the adventures of "Fuji", the rambunctious Red Panda who loved to stroll around the San Diego Zoo with his zookeeper. 
