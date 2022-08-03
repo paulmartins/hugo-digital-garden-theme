@@ -25,7 +25,7 @@ This theme includes:
 You can either use git submodule or clone the repo in your theme folder
 
     ```bash
-    git submodule add https://github.com/paulmartins/hugo-digital-garden-theme.git themes/digital-garden
+    git submodule add https://github.com/paulmartins/hugo-digital-garden-theme.git themes/hugo-digital-garden-theme
     ```
 
     ```bash
@@ -40,6 +40,11 @@ You can either use git submodule or clone the repo in your theme folder
     hugo server
     ```
 
+5. To demo the example site, run the server on the directory of example site
+    ```bash
+    cd themes/exampleSite
+    hugo server
+    ```
 
 ## Update to the latest version of the theme
 
@@ -52,7 +57,7 @@ git submodule update --remote --rebase
 If you clone the theme, just go in the theme folder and `pull`
 
 ```bash
-cd themes/digital-garden
+cd themes/hugo-digital-garden-theme
 git pull
 ```
 
