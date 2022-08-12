@@ -40,6 +40,13 @@ You can either use git submodule or clone the repo in your theme folder
     hugo server
     ```
 
+### Extra tips
+
+You will write the content for your website in a `content` folder, for example in `content/garden/evergreen_example.md`. If you want to have your `content` folder in your root directory, you can copy that from the exampleSite folder to your root directory. In the root directory's `config.toml` you will need to  change the themesdir to have `themesdir = "./themes"`. You now run `hugo server` in the root directory of your project, and Hugo will start your website locally on an available port.
+
+If you want to compare the website from this to the example site, you can start `hugo server` in the exampleSite directory too. Hugo will use different ports for each server, so you can compare the rendered pages with each other. 
+
+To create custom styling, you can create `./static/css/my_style.css`. The CSS styling in here will override the theme's default styling.
 
 ## Update to the latest version of the theme
 
