@@ -55,6 +55,7 @@ copyright = "Nigalya Ponya ©"
 [taxonomies]
   garden_tags = 'garden_tags'
   project_tags = 'project_tags'
+  library_tags = 'library_tags'
 
 
 [markup]
