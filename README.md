@@ -40,11 +40,14 @@ You can either use git submodule or clone the repo in your theme folder
     hugo server
     ```
 
-5. To demo the example site, run the server on the directory of example site
-    ```bash
-    cd themes/exampleSite
-    hugo server
-    ```
+### Extra tips
+
+You will write the content for your website in a `content` folder, for example in `content/garden/evergreen_example.md`. If you want to have your `content` folder in your root directory, you can copy that from the exampleSite folder to your root directory. In the root directory's `config.toml` you will need to  change the themesdir to have `themesdir = "./themes"`. You now run `hugo server` in the root directory of your project, and Hugo will start your website locally on an available port.
+
+If you want to compare the website from this to the example site, you can start `hugo server` in the exampleSite directory too. Hugo will use different ports for each server, so you can compare the rendered pages with each other. 
+
+To create custom styling, you can create `./static/css/my_style.css`. The CSS styling in here will override the theme's default styling. [Here](https://github.com/IdiosApps/IdiosApps.github.io/blob/main/static/css/my_style.css) is an example custom CSS file from a user's blog, and [here](https://idiosapps.github.io/garden/games-for-socials/) is one of their published pages looks. You can see the custom table formatting: custom header row colour, alternating row backgrounds, custom fonts, etc.
+
 
 ## Update to the latest version of the theme
 
