@@ -1,20 +1,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{/*  <!-- Enable Google Analytics -->
+    {{/*
+    <!-- Enable Google Analytics -->
     {{ if .Site.Params.googleAnalytics }}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>  */}}
-    {{/*  <script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script> */}}
+    {{/*
+    <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', '{{ .Site.Params.googleAnalytics }}');
     </script>
-    {{ end }}  */}}
+    {{ end }} */}}
     <!-- Enable Google Fonts -->
-    {{/*  <link rel="preconnect" href="https://fonts.googleapis.com">
+    {{/*
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@200;300;400;500;600&family=Encode+Sans+Semi+Condensed:wght@400&display=swap" rel="stylesheet">  */}}
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@200;300;400;500;600&family=Encode+Sans+Semi+Condensed:wght@400&display=swap"
+        rel="stylesheet"> */}}
     <!-- CSS Styles (including Bootstrap 5 and FontAwesome 6) -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/all.min.css">
@@ -25,5 +30,19 @@
     {{ $title := print .Site.Title " | " .Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
     <title>{{ $title }}</title>
-    <meta name="description" content="{{ if .IsPage }}{{ .Summary }}{{ else }}{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ end }}{{ end }}">
+    <meta name="description"
+        content="{{ if .IsPage }}{{ .Summary }}{{ else }}{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ end }}{{ end }}">
+
+    {{/* Enable KaTex */}}
+    <link rel="stylesheet" href="/css/KaTex.min.css">
+    <script src="/js/KaTex.min.js"> </script>
+    <script src="/js/katex_contrib/auto-render.min.js"></script>
+    {{/*  <script src="/js/katex_contrib/render-a11y-string.min.js"></script>  */}}
+    {{/*  <script src="/js/katex_contrib/mhchem.min.js"></script>  */}}
+    {{/*  <script src="/js/katex_contrib/mathtex-script-type.min.js"></script>  */}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body);
+        });
+    </script>
 </head>
