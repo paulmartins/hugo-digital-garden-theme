@@ -1,14 +1,32 @@
+@font-face {
+  font-family: 'JetBrainsMono-Blod';
+  src: url('../webfonts/JetBrainsMono-Bold.woff2' )format('woff2');
+}
+@font-face {
+  font-family: 'JetBrainsMono-Light';
+  src: url('../webfonts/JetBrainsMono-Light.woff2' )format('woff2');
+}
+@font-face {
+  font-family: 'JetBrainsMono-Lightitalic';
+  src: url('../webfonts/JetBrainsMono-LightItalic.woff2' )format('woff2');
+}
+@font-face {
+  font-family: 'GoogleSans-18';
+  src: url('../webfonts/GoogleSans.ttf' )format('truetype');
+}
+
 :root {
     --blue: #0A94C8;
     --lighter-blue: #addbec;
     --yellow: #FFB603;
     --red: #FF2F03;
-    --dark: #233044;
+    --dark: #1b294b;
     --grey: #454963;
-    --white: #fff;
-    --mulish: 'Mulish', sans-serif;
-    --summary: 'Frank Ruhl Libre', serif;
-    --headings: 'Encode Sans Semi Condensed', sans-serif;
+    --white: rgb(236, 236, 236);
+    --mulish: 'GoogleSans-18', , sans-serif;
+    --summary: 'GoogleSans-18', serif; /*change font to Jetbrains mono*/
+    /* --summary: 'Frank Ruhl Libre', serif; */
+    --headings: 'GoogleSans-18', sans-serif;
 
     /* --mulish: 'Raleway', sans-serif;  */
     /* --summary: 'Playfair Display', serif; */
