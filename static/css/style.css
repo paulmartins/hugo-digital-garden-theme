@@ -27,6 +27,7 @@
     --summary: 'GoogleSans-18', serif; /*change font to Jetbrains mono*/
     /* --summary: 'Frank Ruhl Libre', serif; */
     --headings: 'GoogleSans-18', sans-serif;
+    --scroll-bar-width: 6px;
 
     /* --mulish: 'Raleway', sans-serif;  */
     /* --summary: 'Playfair Display', serif; */
@@ -342,4 +343,22 @@ a:hover {
 .footer-social i:hover{
   color: var(--blue);
   transition: color .5s;
+}
+
+/*  srcoller bar  */
+::-webkit-scrollbar{
+  height: auto;
+  width: var(--scroll-bar-width);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: hsla(0, 0%, 69%, 0.4);
+  border-radius: calc(var(--scroll-bar-width) /2);
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsla(0, 0%, 69%, 0.8);
+}
+
+::-webkit-scrollbar-track{
+  background-color: transparent;
 }
