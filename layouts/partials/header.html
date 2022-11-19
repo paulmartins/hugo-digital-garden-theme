@@ -13,10 +13,19 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
             {{- $currentPage := . -}}
+            {{- $libable := .Site.Params.Enable_lib -}}
             {{ range .Site.Menus.main -}}
-                <li class='nav-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}'>
-                    <a class="nav-link" href="{{ .URL }}"> {{ .Name }}</a>
-                </li>
+                {{ if eq .Name "Library"}}
+                    {{ if $libable}}
+                        <li class='nav-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}'>
+                            <a class="nav-link" href="{{ .URL }}"> {{ .Name }}</a>
+                        </li>
+                    {{end}}
+                {{ else}}
+                    <li class='nav-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}'>
+                        <a class="nav-link" href="{{ .URL }}"> {{ .Name }}</a>
+                    </li>
+                {{end}}
             {{ end }} 
             <li class="nav-item px-2 pt-1">
                 <a class="btn fas fa-moon" id="dark-mode-toggle"></a>
