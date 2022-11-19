@@ -5,7 +5,7 @@
 - [X] LaTeX support
 - [X] Change srcoller bar style
 - [ ] different style for @status.html
-- [ ] Clickable h1-Name in @index.html
+- [X] Clickable h1-Name in @index.html
 - [ ] Changeable avater style in About page
 - [ ] Cover for posts
 - [ ] Replace srcoll type

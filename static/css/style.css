@@ -201,6 +201,13 @@ code {
 .name {
     font-weight: 800;
 }
+.name a{
+  text-decoration: none;
+  color: var(--dark);
+}
+.name a:hover{
+  color: var(--dark);
+}
 .bio {
   max-width: 750px;
   font-weight: 200;
