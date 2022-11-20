@@ -10,3 +10,5 @@
 - [ ] Cover for posts
 - [X] Replace srcoll type
 - [X] Add switch for first letter Capital
+- [X] Fix bug cause by changing fonts in dark mode
+- [X] Fix bug cause by add Powered-by-word in footer in dark mode

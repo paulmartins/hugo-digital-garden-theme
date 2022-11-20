@@ -1,16 +1,28 @@
 html {
     background-color: #171717 !important;
+    margin-bottom: 0px !important;
 }
 html {
     filter: invert(100%) hue-rotate(180deg) brightness(105%) contrast(85%);
     -webkit-filter: invert(100%) hue-rotate(180deg) brightness(105%) contrast(85%);
 }
 body {
-    background-color: #FFF !important;
+    background-color: rgb(236, 236, 236) !important;
+    font-weight: 350 !important;/*修改正文天黑字重*/
 }
 img,
 video,
 body * [style*="background-image"] {
     filter: hue-rotate(180deg) contrast(100%) invert(100%);
     -webkit-filter: hue-rotate(180deg) contrast(100%) invert(100%);
+}
+
+p {/*修复额外白色*/
+    margin-block-end: 0px;
+    margin-bottom: 0px;
+    min-height: 40px;
+}
+
+.navbar-nav .nav-item .nav-link{
+    font-weight: 350 !important; /*修改导航栏天黑字重*/
 }
