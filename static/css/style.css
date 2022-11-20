@@ -313,6 +313,10 @@ code {
   float: left;
   font-weight: bold;
 }
+.main-content-nofirst{
+  line-height: 40px;
+  font-size: 22px;
+}
 a {
   color: var(--blue);
   text-decoration: underline 0.10em rgba(255, 255, 255, 0);

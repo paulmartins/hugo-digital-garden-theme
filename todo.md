@@ -8,4 +8,5 @@
 - [X] Clickable h1-Name in @index.html
 - [ ] Changeable avater style in About page
 - [ ] Cover for posts
-- [ ] Replace srcoll type
+- [X] Replace srcoll type
+- [X] Add switch for first letter Capital

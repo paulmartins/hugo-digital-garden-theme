@@ -1,6 +1,7 @@
 {{ define "main" }}
 
 <div class="container" style="max-width: 800px;">
+    {{/*  single.html  */}}
     <div class="py-4 rounded-3">
         <div class="container-fluid py-2">
             <h1 class="display-2 mb-4 text-center">{{ .Title }}</h1>
@@ -55,7 +56,7 @@
     </div>
 
     <div class="container-fluid py-2">
-        <div class="serif main-content">
+        <div class="serif {{ if .Params.Enbale_Capital_first }} main-content {{ else }} main-content-notfirst {{end}}">
             {{ .Content | safeHTML }}
         </div>
     </div>
