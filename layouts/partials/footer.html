@@ -5,7 +5,7 @@
         </div>
         <div class="col-sm-6 d-flex flex-row-reverse">
             {{ range .Site.Params.Social }}
-            <a class="footer-social px-2" href="{{ .link }}" target="_blank"><i class="{{ .icon }}"></i></a>
+            <a class="footer-social px-2" {{ with .rel }} rel="{{ . }}" {{ end }} href="{{ .link }}" target="_blank"><i class="{{ .icon }}"></i></a>
             {{ end }}
         </div>
     </div>
