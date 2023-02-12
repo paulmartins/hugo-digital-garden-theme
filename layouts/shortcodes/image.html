@@ -1,0 +1,22 @@
+{{ $img := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
+{{ $command := .Get 1 }}
+{{ $options := .Get 2 }}
+{{ if eq $command "Fit"}}
+  {{ $img = $img.Fit $options }}
+{{ else if eq $command "Resize"}}
+  {{ $img = $img.Resize $options }}
+{{ else if eq $command "Fill"}}
+  {{ $img = $img.Fill $options }}
+{{ else if eq $command "Crop"}}
+  {{ $img = $img.Crop $options }}
+{{ else }}
+  {{ errorf "Invalid image processing command: Must be one of Crop, Fit, Fill or Resize."}}
+{{ end }}
+  <img style="max-width: 100%; width: auto; height: auto; margin: 15px;" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+  <figcaption>
+  <small>
+    {{ with .Inner }}
+      {{ . }}
+    {{ end }}
+  </small>
+  </figcaption>

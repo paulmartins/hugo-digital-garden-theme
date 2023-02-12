@@ -1,33 +1,33 @@
 :root {
-    --blue: #0A94C8;
-    --lighter-blue: #addbec;
+    --blue: #326833;
+    --lighter-blue: #4d6b50;
     --yellow: #FFB603;
     --red: #FF2F03;
     --dark: #233044;
     --grey: #454963;
     --white: #fff;
-    --mulish: 'Mulish', sans-serif;
+    --offwhite: #fafafa;
+    --title: 'Mulish', sans-serif;
     --summary: 'Frank Ruhl Libre', serif;
     --headings: 'Encode Sans Semi Condensed', sans-serif;
-
-    /* --mulish: 'Raleway', sans-serif;  */
-    /* --summary: 'Playfair Display', serif; */
-    /* --summary: 'Spectral', serif; */
-
 }
 
-
+canvas {
+  width: 100%;
+  height: 100%;
+}
 /********************* General *********************/
 
 body {
-  font-family: var(--mulish);
+  font-family: var(--summary);
   font-weight: 300;
   color: var(--dark);
+  background-color: var(--white);
 }
 
 #content {
   position: relative;
-  min-height: 90vh;
+  min-height: 95vh;
 }
 
 a {
@@ -40,7 +40,7 @@ strong {
 }
 
 table {
-  font-family: var(--mulish);
+  font-family: var(--summary);
 }
 thead {
   background-color:whitesmoke;
@@ -66,15 +66,16 @@ table td{
 
 .card{
   border-radius: 4px;
-  background: #fff;
+  background: var(--offwhite);
   box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
   transition: 1s transform cubic-bezier(.155,1.105,.295,1.12),1s box-shadow,1s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
 /* padding: 14px 80px 18px 36px; */
   cursor: pointer;
+  font-family: var(--headings);
 }
 .card-title {
   font-weight: 600;
-  font-family: var(--mulish);
+  font-family: var(--title);
 }
 .card-footer {
   background-color: var(--white);
@@ -143,12 +144,12 @@ code {
 /********************* Navbar *********************/
 
 .navbar {
-  background: var(--light) !important;
+  background: var(--white) !important;
   color: var(--dark);
+  font-family: var(--title);
 }
 .navbar-nav .nav-item .nav-link {
     color: var(--grey);
-    font-family: var(--mulish);
     font-weight: 300;
     transition: color 1s;
     display: block;
@@ -180,11 +181,14 @@ code {
 /********************* Home *********************/
 
 .name {
-    font-weight: 800;
+  font-family: var(--title);
+  font-weight: 800;
 }
+
 .bio {
   max-width: 750px;
   font-weight: 200;
+  font-family: var(--summary);
 }
 .heading {
     font-weight: 400;
@@ -198,14 +202,13 @@ code {
   cursor: pointer;
 }
 .subheading {
-  font-family: var(--summary);
   color: var(--grey);
   font-size: 22px;
   padding-bottom: 10px;
 }
 .tag-badge {
   background-color: var(--blue);
-  font-family: var(--mulish);
+  font-family: var(--headings);
   font-weight: 400;
 }
 .see-all {
@@ -270,7 +273,7 @@ code {
 
 /* ---- Title ---- */
 .display-2 {
-  font-family: var(--mulish);
+  font-family: var(--title);
   font-weight: 700;
   color: var(--dark);
 }
@@ -280,12 +283,6 @@ code {
 .main-content {
   line-height: 40px;
   font-size: 22px;
-}
-.main-content::first-letter {
-  font-size: 375%;
-  padding: 20px 15px 0px 0px;
-  float: left;
-  font-weight: bold;
 }
 a {
   color: var(--blue);
