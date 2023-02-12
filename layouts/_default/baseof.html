@@ -3,12 +3,8 @@
     {{- partial "head.html" . -}}
     <body>
         {{- partial "header.html" . -}}
-
         <div id="content">
-            <!-- <canvas style='position: fixed; z-index: 0;' ></canvas> -->
-            <div style="position: inherit; z-index: 1;">
             {{- block "main" . }}{{- end }}
-            </div>
         </div>
         {{- partial "footer.html" . -}}
         {{- partial "script.html" . -}}
