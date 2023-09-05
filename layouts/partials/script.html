@@ -3,6 +3,18 @@
 <script src="/js/isotope.pkgd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
 <script src="/js/dark.js"></script>
+<script>
+// set the default theme
+{{ if .Site.Params.darkModeDefault }}
+
+var savedTheme = localStorage.getItem("dark-mode-storage") || "{{ .Site.Params.darkModeDefault }}" 
+setTheme(savedTheme);
+
+{{ else }}
+var savedTheme = localStorage.getItem("dark-mode-storage") || "light" 
+setTheme(savedTheme);
+{{ end }}
+</script>
 <script src="/js/isotope.js"></script>
 <script src="/js/mermaid.min.js"></script>
 <script>mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'});</script>

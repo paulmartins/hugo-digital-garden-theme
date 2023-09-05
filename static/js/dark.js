@@ -19,7 +19,3 @@ function setTheme(mode) {
         toggle.className = "btn fas fa-moon";
     }
 }
-
-// the default theme is light
-var savedTheme = localStorage.getItem("dark-mode-storage") || "light";
-setTheme(savedTheme);
