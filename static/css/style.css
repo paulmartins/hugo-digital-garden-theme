@@ -339,6 +339,7 @@ button.anchor {
 	button.anchor {
 	  opacity: 0.1;
 	}
+  h1:hover button.anchor,
   h2:hover button.anchor,
   h3:hover button.anchor,
   h4:hover button.anchor,
