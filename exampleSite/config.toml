@@ -62,6 +62,10 @@ copyright = "Nigalya Ponya ©"
   defaultMarkdownHandler = 'goldmark'
   [markup.goldmark.renderer]
     unsafe = true
+  [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+      withAttribute = true
   [markup.goldmark.extensions]
     definitionList = true
     footnote = true
