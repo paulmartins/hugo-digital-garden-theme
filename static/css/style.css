@@ -10,6 +10,8 @@
     --title: 'Mulish', sans-serif;
     --summary: 'Frank Ruhl Libre', serif;
     --headings: 'Encode Sans Semi Condensed', sans-serif;
+    --h5: 0.83rem;
+    --h6: 0.67rem;
 }
 
 /********************* General *********************/
@@ -317,4 +319,76 @@ a:hover {
 .footer-social i:hover{
   color: var(--blue);
   transition: color .5s;
+}
+
+
+/********************* Linked Header *********************/
+
+button.anchor {
+  fill: var(--blue);
+  background-color: inherit;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: inherit;
+  padding: 0;
+}
+
+@media (hover: hover) {
+	button.anchor {
+	  opacity: 0.1;
+	}
+  h2:hover button.anchor,
+  h3:hover button.anchor,
+  h4:hover button.anchor,
+  h5:hover button.anchor,
+  h6:hover button.anchor {
+    opacity: 1;
+  }
+}
+
+@media (hover: none) {
+	button.anchor {
+	  opacity: 1;
+	}
+}
+
+@media (hover: hover) {
+  [data-title] {
+  position: relative;
+  }
+
+  [data-title]:after {
+  font-size: var(--h6);
+  content: attr(data-title);
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  color: var(--white);
+  background-color: var(--dark);
+  width: max-content;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  padding: 0.4rem 0.5rem;
+  border-radius: 5px;
+  }
+
+  [data-title]:hover:after {
+  opacity: 1;
+  }
+}
+
+.link-copied {
+  font-size: var(--h5);
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  margin: 1rem;
+  color: var(--white);
+  background-color: var(--dark);
+  width: max-content;
+  padding: 0.4rem 0.7rem;
+  border-radius: 5px;
+  z-index: 1;
 }
