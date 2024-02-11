@@ -21,21 +21,36 @@ This theme includes:
 ## Getting started
 
 1. Install hugo and create a new website: [https://gohugo.io/getting-started/quick-start/](https://gohugo.io/getting-started/quick-start/)
-2. Add the theme to your website  
-You can either use git submodule or clone the repo in your theme folder
+2. Create a website directory and navigate to it
 
     ```bash
-    git submodule add https://github.com/paulmartins/hugo-digital-garden-theme.git themes/hugo-digital-garden-theme
+    hugo new site example.com
+    cd example.com
     ```
+3. Make the website directory a Hugo module and add the theme to it
 
     ```bash
-    cd themes
-    git clone https://github.com/paulmartins/hugo-digital-garden-theme.git
+    hugo mod init example.com
+    hugo mod get github.com/paulmartins/hugo-digital-garden-theme
+    hugo mod tidy
     ```
 
-3. Customize your site in your `config.toml`. An example is given in the theme folder: `themes/digital-garden/exampleSite/config.toml`
+    **Note**: This will create a `go.mod` file at the website's root directory, which will look like:
 
-4. Run the server and check your [localhost:1313](http://localhost:1313)
+    ```
+    module example.com
+
+    go 1.22.0
+
+    require github.com/paulmartins/hugo-digital-garden-theme v0.0.0-20240202125658-b2dbca71daa9 // indirect
+    ```
+
+5. Customize your site in your `config.toml`. An example is given in the theme folder: `themes/digital-garden/exampleSite/config.toml`
+
+6. Copy the `content/` directory in `themes/digital-garden/exampleSite/` to `example.com/`
+
+7. Run the server and check your [localhost:1313](http://localhost:1313)
+   
     ```bash
     hugo server
     ```
